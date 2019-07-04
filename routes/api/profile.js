@@ -351,17 +351,11 @@ router.post(
       const newEdu = {
 
         school: req.body.school,
-
         degree: req.body.degree,
-
         fieldofstudy: req.body.fieldofstudy,
-
         from: req.body.from,
-
         to: req.body.to,
-
         current: req.body.current,
-
         description: req.body.description
 
       };
@@ -371,9 +365,6 @@ router.post(
       // Add to exp array
 
       profile.education.unshift(newEdu);
-
-
-
       profile.save().then(profile => res.json(profile));
 
     });
@@ -387,9 +378,7 @@ router.post(
 
 
 // @route   DELETE api/profile/experience/:exp_id
-
 // @desc    Delete experience from profile
-
 // @access  Private
 
 router.delete(
