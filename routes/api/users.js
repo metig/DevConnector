@@ -30,6 +30,7 @@ const {errors, isValid} = validateRegisterInput(req.body);
            errors.email =  'Email already exists'
            return res.status(400).json(errors)
        } else {
+           errors.email = '';
            const avatar = gravatar.url(req.body.email, {
                s: '200',
                r: 'pg',
