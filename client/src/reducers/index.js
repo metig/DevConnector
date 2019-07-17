@@ -5,5 +5,6 @@ import authReducer from './authReducer'
 
 
 export default combineReducers ({
-   auth: authReducer
+   auth: authReducer,                   // auth is container in store in which authReducer store in
+                   
 })
