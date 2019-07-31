@@ -1,4 +1,6 @@
-module.exports = {
-  mongoURI: 'mongodb+srv://metiadmin:1234@devconnectorcluster-fnvz5.azure.mongodb.net/test?retryWrites=true&w=majority',
-  secretOrKey: 'secret'
+if (process.env.NODE_ENV === 'production'){
+  module.exports = require('./keys_prod');
+} else {
+  module.exports = require('./keys_dev');
+
 }
