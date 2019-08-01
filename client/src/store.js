@@ -10,8 +10,9 @@ const store = createStore(
   rootReducer,
   initialState, 
   compose(
-     applyMiddleware(...middleware),                                                               // ... is spread operator
-     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));                                               
+     applyMiddleware(...middleware)//,                                                               // ... is spread operator
+    // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    ));                                               
 
 
 
