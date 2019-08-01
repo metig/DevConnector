@@ -5,16 +5,18 @@ const profile = require('./routes/api/profile');
 const posts = require('./routes/api/posts');
 const bodyParser = require('body-Parser');
 const passport = require('passport');
-
-
-
-
 const app = express();
+
+
+//body parsser middleware
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(bodyParser.json());
+
 //Db config
 const db = require('./config/keys').mongoURI;
+
+// connect to mangodb
 mongoose.connect(db)
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.log(err));
@@ -25,7 +27,7 @@ app.use(passport.initialize());
 //Passport config
 require ('./config/passport')(passport);
 
-app.get('/', (req, res) => res.send('Hello world'));
+//app.get('/', (req, res) => res.send('Hello world'));
 
 // use routes
 app.use('/api/users', users);
@@ -42,7 +44,7 @@ if (process.env.NODE_ENV === 'production'){
 
 }
 
-const port = process.env.PORT || 6010;
+const port = process.env.PORT || 5004;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
 
 
